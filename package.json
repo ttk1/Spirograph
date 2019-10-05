@@ -1,0 +1,27 @@
+{
+  "name": "spirograph",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "dist": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttk1/Spirograph.git"
+  },
+  "author": "tama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ttk1/Spirograph/issues"
+  },
+  "homepage": "https://github.com/ttk1/Spirograph#readme",
+  "devDependencies": {
+    "ts-loader": "^6.1.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
