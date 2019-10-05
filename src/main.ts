@@ -1,6 +1,6 @@
 const WIDTH = 500;
 const HEIGHT = 500;
-const POINT_SIZE = 5;
+const POINT_SIZE = 1;
 
 window.onload = () => {
   const canvas = document.createElement('canvas');
@@ -10,10 +10,10 @@ window.onload = () => {
   const context = canvas.getContext('2d');
 
   refresh();
-  for (let i = 0; i < 100; i++) {
+  for (let step = 0; step < 50000; step++) {
     drawPoint(
-      Math.random() - 0.5,
-      Math.random() - 0.5
+      Math.cos(2 * Math.PI * (step / 100)) / (2.1 + step / 100),
+      Math.sin(2 * Math.PI * (step / 100)) / (2.1 + step / 100)
     );
   }
 
@@ -23,7 +23,7 @@ window.onload = () => {
     context.arc(
       WIDTH * (x + 0.5),
       HEIGHT * (y + 0.5),
-      POINT_SIZE, 0, 2 * Math.PI, true
+      POINT_SIZE / 2, 0, 2 * Math.PI, true
     );
     context.fill();
   }
