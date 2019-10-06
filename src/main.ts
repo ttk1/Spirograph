@@ -10,19 +10,16 @@ window.onload = () => {
   const context = canvas.getContext('2d');
 
   refresh();
-  for (let step = 0; step < 50000; step++) {
-    drawPoint(
-      Math.cos(2 * Math.PI * (step / 100)) / (2.1 + step / 100),
-      Math.sin(2 * Math.PI * (step / 100)) / (2.1 + step / 100)
-    );
+  for (let theta = 0; theta < 20 * Math.PI; theta += 0.001) {
+    drawPoint((1 + Math.sin(theta * 1.7)) / 2, theta);
   }
 
-  function drawPoint(x: number, y: number) {
+  function drawPoint(r: number, theta: number) {
     context.fillStyle = 'black';
     context.beginPath();
     context.arc(
-      WIDTH * (x + 0.5),
-      HEIGHT * (y + 0.5),
+      WIDTH * (1 + r * Math.cos(theta)) / 2,
+      HEIGHT * (1 + r * Math.sin(theta)) / 2,
       POINT_SIZE / 2, 0, 2 * Math.PI, true
     );
     context.fill();
